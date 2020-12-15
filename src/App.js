@@ -35,6 +35,12 @@ function App() {
         setCurQuestion(curQuestion+1)
       }
   }
+  function resetStates(){
+    setCurQuestion(0)
+    setRightAns(0)
+    setWrongAns(0)
+    setEndQuiz(false)
+  }
   return (
     <>
     <div className="container">
@@ -60,7 +66,8 @@ function App() {
                   }
                   {
                     endQuiz&&(<>
-                      <Result rightAns={rightAns} wrongAns={wrongAns} />
+                      <Result rightAns={rightAns} wrongAns={wrongAns} 
+                      resetStates={resetStates}/>
                     </>)
                   }
                   
